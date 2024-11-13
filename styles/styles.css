@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Funnel+Sans&family=Poppins&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  color: #ebebeb;
+}
+
+html {
+  font-size: 1rem;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.row {
+  display: flex;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+header {
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+  padding: 1.5em 0;
+}
+
+.logo {
+  align-items: center;
+  & img {
+    max-width: 35px;
+    & h1 {
+      font-weight: 700;
+      font-size: 2em;
+    }
+  }
+}
+
+nav ul {
+  gap: 2em;
+  align-items: center;
+}
+
+nav a {
+  font-weight: 500;
+  font-size: 18px;
+  transition: 0.2s ease-in-out;
+}
+
+nav a::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 3px;
+  margin: 0 auto;
+  background-color: #ebebeb;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+}
+
+nav li:nth-of-type(5) a::after {
+  all: unset;
+}
+
+nav a:hover::after {
+  width: 30px;
+}
+
+nav li:nth-of-type(5) a {
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+  background-size: 150%;
+  animation: gradient-animation 20s ease infinite;
+  transition: 0.3s ease-in-out;
+}
+
+li:nth-of-type(5) a:hover,
+.hero a:hover {
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.hero {
+  gap: 2em;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+  min-height: calc(100vh - 93.6px);
+}
+
+.hero > * {
+  flex: 1 1 25em;
+}
+
+.hero h1 {
+  font-weight: 700;
+  font-size: clamp(40px, 5vw, 70px);
+  line-height: 1;
+}
+
+.hero p {
+  font-weight: 500;
+  font-size: 30px;
+  padding: 1em 0;
+}
+
+.hero a {
+  font-weight: 700;
+  font-size: 20px;
+  padding: 0.3em 1em;
+  background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+  background-size: 150%;
+  animation: gradient-animation 20s ease infinite;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.gradient-background {
+  background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+  background-size: 150%;
+  animation: gradient-animation 20s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+@media screen and (max-width:900px) {
+    .toggleMenu {
+        position: absolute;
+        right: 5%;
+        background-image: url(https://cdn-icons-png.flaticon.com/512/8182/8182885.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 30px;
+        width: 30px;
+        height: 30px;
+        padding: 2em;
+        z-index: 1000;
+        transition: background-size 0.3s ease-in-out;
+    }
+    .toggleMenu.active {
+        position: fixed;
+        background-image: url(https://cdn-icons-png.flaticon.com/512/54/54972.png);
+        background-size: 25px;
+    }
+    .navigation {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        max-height: 0;
+        opacity: 0;
+        transform-origin: top;
+        transform: scale(1, 0);
+    }
+    .navigation.active {
+        position: fixed;
+        inset: 0;
+        margin: auto;
+        max-height: 100%;
+        opacity: 1;
+        background-color: #00bfff;
+        transform: scale(1, 1);
+    }
+    nav ul {
+        flex-direction: column;
+    }
+}

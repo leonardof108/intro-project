@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Funnel+Sans&family=Poppins&display=swap");
+
+/* CSS RESETS */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--FONT-1);
+  font-weight: 400;
+}
+
+/* VARIABLES */
+:root {
+  --COLOR-MAIN-1: hsl(195, 100%, 50%);
+  --COLOR-MAIN-2: hsl(351, 100%, 65%);
+  --COLOR-MAIN-3: hsl(7, 100%, 69%);
+  --COLOR-ACCENT-1: #a7ea15;
+  --COLOR-ACCENT-2: #3dea15;
+  --COLOR-ACCENT-3: #eac215;
+  --COLOR-SHADE-1: #7944ee;
+  --COLOR-SHADE-2: #ce44ee;
+  --COLOR-SHADE-3: #4464ee;
+  --MONO-1: #fff;
+  --MONO-2: #ccc;
+  --MONO-2: #aaa;
+  --MONO-4: #000;
+  --MONO-5: #333;
+  --MONO-6: #666;
+  --TRANSPARENT: hsla(0, 0%, 0%, 0.3);
+  --FONT-1: "Poppins", serif;
+  --FONT-2: "Funnel Sans", sans-serif;
+}
+
+/* ANIMATIONS */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* GENERAL STYLING */
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  font-family: var(--FONT-1);
+  font-size: 1rem;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: var(--MONO-4);
+}
+
+header {
+  position: fixed;
+  margin: 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+header > nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  background-color: var(--MONO-1);
+  padding: 0.5rem;
+  border-radius: 50rem;
+  opacity: 0%;
+  transition: all 0.2s ease-in-out;
+  border: solid 1px black;
+  &:hover {
+    opacity: 100%;
+  }
+}
+
+header > nav > a {
+  color: var(--MONO-4);
+}
+
+main {
+  width: 100%;
+}
+main > section:nth-child(1) {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(
+    300deg,
+    var(--COLOR-MAIN-1),
+    var(--COLOR-MAIN-2),
+    var(--COLOR-MAIN-3)
+  );
+  animation: gradient-animation 20s ease infinite;
+  background-size: 150%;
+  display: flex;
+  align-items: center;
+}
+
+main > section:nth-child(1) > h1 {
+  color: var(--MONO-1);
+  font-size: 3rem;
+  margin-left: 20vw;
+  width: 1rem;
+}
+main > section:nth-child(2) {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main > section:nth-child(2) > h2 {
+  margin: 1rem;
+}
+
+main > section:nth-child(2) {
+}
+
+footer {
+  margin: 0.5rem;
+}
